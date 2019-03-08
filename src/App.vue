@@ -5,7 +5,7 @@
       <!-- <header class="app-header" :class="{'header-hide':!$store.state.headerStatus}">
         <wx-header :pageName="pageName"></wx-header>
       </header>-->
-      <header id="header" v-if="this.$store.state.headerTab">{{ this.$store.state.header }}</header>
+      <header id="header" v-if="this.$store.state.headerTab">{{ this.$route.meta.title }}</header>
       <!--搜索框 只在“微信”和“通讯录”页面下显示-->
       <!--四个门面页 “微信” “通讯录” “发现” “我”-->
       <section class="app-content">
@@ -89,17 +89,19 @@ $material-icons-font-path: "~material-icons/iconfont/";
 @import "assets/css/lib/weui.min.css";
 .app-content {
   min-height: 100%;
+  background: #fff;
 }
 #header {
   height: 0.88rem;
   width: 100%;
-  background: #1e853c;
+  background: #e60013;
   position: fixed;
   top: 0;
   left: 0;
   text-align: center;
   line-height: 0.88rem;
-  font-size: 0.38rem;
+  font-size: 0.3rem;
   color: #fff;
+  z-index: 99;
 }
 </style>

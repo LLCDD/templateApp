@@ -25,7 +25,7 @@ export default {
   background: #ffffff;
   margin: 0 auto;
   min-height: 100%;
-  padding-top: 3.23rem;
+  padding-top: 1.7rem;
   overflow-y: auto;
 }
 </style>

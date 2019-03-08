@@ -22,7 +22,7 @@
 
 #nav a {
     display: block;
-    width: 33.3%;
+    width: 25%;
     height: 100%;
     float: left;
     color: #666;
@@ -33,8 +33,8 @@
 
 #nav a img {
     display: block;
-    width: .5rem;
-    height: .5rem;
+    width: .4rem;
+    height: .4rem;
     margin: 0.15rem auto 0.1rem;
 }
 
@@ -58,7 +58,7 @@
 }
 
 #nav a.router-link-active {
-    color: #333333;
+    color: #e60013;
 }
 
 #nav a.router-link-active img:nth-child(2) {

@@ -1,49 +1,20 @@
 <template>
-  <div class="div">
-    <mt-swipe :auto="4000" style="width:100%;height:3.78rem">
-      <mt-swipe-item style="background:red">1</mt-swipe-item>
-      <mt-swipe-item style="background:pink">2</mt-swipe-item>
-      <mt-swipe-item style="background:#1e853c">3</mt-swipe-item>
-    </mt-swipe>
-    <div class="nr">
-      <span class="xie">鑫峰头条</span>
-      <div class="nr1">
-        <p>234234</p>
-        <p>23423432</p>
-      </div>
-    </div>
-    <div class="event">
-      <router-link tag="span" to="/propaganda">
-        <img src="../../assets/img/01.png" alt>
-        <span>如何宣传</span>
-      </router-link>
-      <router-link tag="span" to="/propaganda">
-        <img src="../../assets/img/2.png" alt>
-        <span>鑫峰会员</span>
-      </router-link>
-      <router-link tag="span" to="/propaganda">
-        <img src="../../assets/img/3.png" alt>
-        <span>推广二维码</span>
-      </router-link>
-      <router-link tag="span" to="/propaganda">
-        <img src="../../assets/img/6.png" alt>
-        <span>关于我们</span>
-      </router-link>
-    </div>
-  </div>
+  <div class="div">{{ msg }}</div>
 </template>
 <script>
 export default {
   data() {
     return {
-      msg: "首页"
+      msg: "首页",
+      list: [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     };
   },
   mounted() {
     this.$store.commit("headerTab", true);
     this.$store.commit("footerTab", true);
-    this.$store.commit("header", "鑫峰视觉");
-  }
+    this.$store.commit("header", "开仓放梁");
+  },
+  methods: {}
 };
 </script>
 <style scope="">
@@ -85,8 +56,11 @@ export default {
 .event {
   margin-top: 0.2rem;
   width: 100%;
-  height: 3.22rem;
+  /* height: 3.22rem; */
+  height: 100%;
   background: #fff;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 .event > span {
   display: inline-block;
@@ -104,5 +78,11 @@ export default {
 .event > span > span {
   margin-left: 0.22rem;
   font-size: 0.26rem;
+}
+.bscroll {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 </style>

@@ -1,32 +1,18 @@
 <template>
-  <!-- <div class="entry">
-           <input type="text" placeholder="请输入手机号" v-model="phone">
-           <input type="text" placeholder="请输入昵称" v-model="username">
-           <p>
-             <input type="text" placeholder="输入手机验证码" v-model="phone_code">
-             <span v-show="inentify" @click="send">发送验证码</span>
-             <span v-show="timer">{{count}}s</span>
-           </p>
-           <input type="password" placeholder="请输入密码" v-model="password">
-           <input type="password" placeholder="请再次输入密码" v-model="password_confirmation">
-           <input type="password" placeholder="输入支付密码" v-model="security">
-           <input type="password" placeholder="请再次输入支付密码" v-model="security_confirmation">
-           <input type="text" placeholder="邀请码:888888" v-model="recommend">
-        </div>
-        <div class="foot" @click="register">
-             立即注册
-  </div>-->
   <div class="regiset">
-    <div class="put" style="  margin-top: 0.32rem;">
-      <img class="img" src="../../../assets/img/addpeople.png" alt>
-      <input type="text" placeholder="请输入昵称" v-model="username">
-    </div>
+    <header>
+      <span @click="tap()" class="span">
+        <img src="../../assets/img/return.png" alt>
+      </span>
+      <span>忘记密码</span>
+    </header>
+
     <div class="put">
-      <img class="img" src="../../../assets/img/mobilephone.png" alt>
+      <img class="img" src="../../assets/img/mobilephone.png" alt>
       <input type="text" placeholder="请输入手机号" v-model="phone">
     </div>
     <div class="put">
-      <img class="img" src="../../../assets/img/smallscreen.png" alt>
+      <img class="img" src="../../assets/img/smallscreen.png" alt>
       <input class="code" type="text" placeholder="输入手机验证码" v-model="phone_code">
       <p class="p">
         <span v-if="inentify" @click="send" style="color:#e60013">发送验证码</span>
@@ -34,18 +20,18 @@
       </p>
     </div>
     <div class="put">
-      <img class="img" src="../../../assets/img/lock.png" alt>
+      <img class="img" src="../../assets/img/lock.png" alt>
       <input type="password" placeholder="请输入登陆密码" v-model="password">
     </div>
     <div class="put">
-      <img class="img" src="../../../assets/img/lock.png" alt>
+      <img class="img" src="../../assets/img/lock.png" alt>
       <input type="password" placeholder="请再次输入登陆密码" v-model="password_confirmation">
     </div>
     <!-- <div class="put">
       <img class="img" src="../../../assets/img/addpeople.png" alt>
       <input type="text" placeholder="请输入邀请码" v-model="recommend">
     </div>-->
-    <button @click="register">立即注册</button>
+    <button @click="register">确定修改</button>
   </div>
 </template>
 
@@ -69,6 +55,9 @@ export default {
     };
   },
   methods: {
+    tap() {
+      this.$router.go(-1);
+    },
     // 一个简单的定时器 点击的时候 计入倒计时 如果倒计时等于1的时候显示点击按钮清除定时器
     async send() {
       if (!this.phone) {
@@ -134,6 +123,29 @@ export default {
 <style scoped>
 .regiset {
   min-height: 100%;
+}
+header {
+  width: 100%;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  text-align: center;
+  position: relative;
+}
+header img {
+  position: absolute;
+  left: 0.3rem;
+  height: 0.4rem;
+  bottom: 0.2rem;
+}
+header .span {
+  /* background: red; */
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  left: 0rem;
+  height: 0.8rem;
+  bottom: 0rem;
 }
 .put {
   width: 92%;

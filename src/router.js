@@ -18,7 +18,16 @@ let router = new Router({
         requiresAuth: false
       }
     },
-
+    // 忘记密码
+    {
+      path: '/forget',
+      name: 'forget',
+      component: () =>
+        import(/* webpackChunkName: "forget" */ './components/forget/forget'),
+      meta: {
+        requiresAuth: false
+      }
+    },
     {
       path: '/register',
       name: 'register',
@@ -34,7 +43,8 @@ let router = new Router({
       component: () =>
         import(/* webpackChunkName: "register" */ './components/index/index'),
       meta: {
-        requiresAuth: false
+        requiresAuth: false,
+        title: "开仓放粮"
       }
     },
     {

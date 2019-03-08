@@ -10,7 +10,7 @@ export default {
   name: "casualheader",
   data() {
     return {
-      headerpicture: require("../../../../public/image/return.png")
+      headerpicture: require("../../../assets/img/return.png")
     };
   },
   methods: {
@@ -27,13 +27,12 @@ export default {
   height: 0.88rem;
   display: flex;
   z-index: 2;
-  background: #1e853c;
 }
 .header span {
   margin-left: 33%;
   margin-top: 0.27rem;
   font-size: 0.3rem;
-  color: azure;
+  color: #000;
 }
 .header img {
   width: 0.25rem;

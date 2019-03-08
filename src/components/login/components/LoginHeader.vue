@@ -5,14 +5,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    _.first = function() {
+      console.log("hello world");
+    };
+  }
+};
 </script>
 
 <style scoped>
 .allcontent img {
   display: block;
-  width: 1.8rem;
-  height: 1.6rem;
+  width: 2.2rem;
+  height: 2.2rem;
   margin: 0 auto;
   margin-bottom: 1.28rem;
 }

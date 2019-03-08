@@ -3,17 +3,17 @@
     <!-- <input type="text" placeholder="请输入账号" v-model="phone">
     <input type="password" placeholder="请输入密码" v-model="password">-->
     <div class="landing">
-      <span>手机号</span>
+      <img class="img" src="../../../assets/img/mobilephone.png" alt>
       <input type="text" placeholder="请输入账号" v-model="phone">
     </div>
     <div class="landing">
-      <span>密码</span>
+      <img class="img" src="../../../assets/img/lock.png" alt>
       <input type="password" placeholder="请输入密码" v-model="password">
     </div>
     <div class="login" @click="login">登录</div>
     <div class="problem">
-      <router-link tag="span" to="/register">注册会员</router-link>
-      <router-link tag="span" to="/retrieve">找回密码</router-link>
+      <router-link tag="span" to="/register">注册新用户</router-link>
+      <router-link tag="span" to="/forget">忘记密码？</router-link>
     </div>
   </div>
 </template>
@@ -65,7 +65,14 @@ export default {
 .landing {
   width: 100%;
   height: 0.9rem;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #ea2c3c;
+  padding: 0 0.8rem;
+  position: relative;
+}
+.landing > input {
+  height: 0.9rem;
+  padding: 0.3rem 0;
+  background: none;
 }
 .landing > span {
   line-height: 0.9rem;
@@ -79,7 +86,7 @@ export default {
   width: 100%;
   height: 0.8rem;
   border-radius: 0.4rem;
-  background: #1e853c;
+  background: #e60013;
   margin-top: 1.23rem;
   text-align: center;
   line-height: 0.8rem;
@@ -99,6 +106,13 @@ export default {
   line-height: 0.44rem;
   text-align: center;
   font-size: 0.24rem;
-  color: #1e853c;
+  color: #e60013;
+}
+.img {
+  position: absolute;
+  height: 0.3rem;
+  width: 0.3rem;
+  left: 0.2rem;
+  bottom: 0.25rem;
 }
 </style>
