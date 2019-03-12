@@ -157,7 +157,7 @@ header .span {
   padding: 0 0.28rem;
   /* background: red; */
   border-bottom: 1px solid #e60013;
-  padding: 0 1rem;
+  padding-left: 1rem;
   position: relative;
 }
 .put > input {
@@ -172,15 +172,15 @@ header .span {
   color: #1e853c;
 }
 .code {
-  width: 36%;
+  width: 60%;
 }
 .p {
   float: right;
   background: #fff;
-  width: 30%;
+  width: 36%;
   text-align: center;
   height: 0.6rem;
-  line-height: 0.6rem;
+  line-height: 0.7rem;
   margin-top: 0.12rem;
   border-radius: 4px;
 }

@@ -61,7 +61,6 @@ export default {
       security: "",
       security_confirmation: "",
       phone_code: "",
-      recommend: "",
       inentify: true,
       timer: false,
       count: 60,
@@ -103,8 +102,7 @@ export default {
         !this.username ||
         !this.password ||
         !this.password_confirmation ||
-        !this.phone_code ||
-        !this.recommend
+        !this.phone_code
       ) {
         this.$toasted.error("请输入完善信息", { icon: "error" }).goAway(2000);
         return;
@@ -113,18 +111,21 @@ export default {
       try {
         // await等待一个异步返回的结果 如果没有await 会报user is undefined 获取不到
         let res = await this.http.post("/api/register", {
-          username: this.username,
+          nickname: this.username,
           phone: this.phone,
           password: this.password,
           password_confirmation: this.password_confirmation,
-          phone_code: this.phone_code,
-          recommend: this.recommend
+          sms_code: this.phone_code
         });
         console.log(res);
-        this.$toasted.success("注册成功").goAway(1500);
-        this.$router.replace({ name: "login" });
+        if (res.code == 200) {
+          this.$toasted.success("注册成功").goAway(1500);
+          this.$router.replace({ name: "login" });
+        } else {
+          this.$toasted.error(res.message, { icon: "error" }).goAway(1000);
+        }
       } catch (error) {
-        this.$toasted.error(error.message, { icon: "error" }).goAway(2000);
+        this.$toasted.error(error.message, { icon: "error" }).goAway(1000);
       }
     }
   }
@@ -145,7 +146,7 @@ export default {
   padding: 0 0.28rem;
   /* background: red; */
   border-bottom: 1px solid #e60013;
-  padding: 0 1rem;
+  padding-left: 1rem;
   position: relative;
 }
 .put > input {
@@ -165,7 +166,7 @@ export default {
 .p {
   float: right;
   background: #fff;
-  width: 30%;
+  width: 34%;
   text-align: center;
   height: 0.6rem;
   line-height: 0.6rem;

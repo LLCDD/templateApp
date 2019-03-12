@@ -7,7 +7,7 @@
         <span>首页</span>
       </router-link>
 
-      <router-link to="/task">
+      <router-link to="/money">
         <img src="../../assets/img/coupons-h.png" alt>
         <img src="../../assets/img/coupons.png" alt>
         <span>钱包</span>

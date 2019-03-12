@@ -5,7 +5,12 @@
       <!-- <header class="app-header" :class="{'header-hide':!$store.state.headerStatus}">
         <wx-header :pageName="pageName"></wx-header>
       </header>-->
-      <header id="header" v-if="this.$store.state.headerTab">{{ this.$route.meta.title }}</header>
+      <header id="header" v-if="this.$route.meta.header">
+        <span @click="fanhui" v-if="this.$route.meta.fan == 1">
+          <img src="./assets/images/return.png" alt>
+        </span>
+        {{ this.$route.meta.title }}
+      </header>
       <!--搜索框 只在“微信”和“通讯录”页面下显示-->
       <!--四个门面页 “微信” “通讯录” “发现” “我”-->
       <section class="app-content">
@@ -17,7 +22,7 @@
         <!-- </transition> -->
       </section>
       <!--底部导航 路由 -->
-      <footer class="app-footer" v-if="this.$store.state.footerTab">
+      <footer class="app-footer" v-if="this.$route.meta.footer">
         <wx-nav></wx-nav>
       </footer>
     </div>
@@ -44,7 +49,11 @@ export default {
     };
   },
   created() {},
-  methods: {},
+  methods: {
+    fanhui() {
+      this.$router.go(-1);
+    }
+  },
   watch: {
     // 监听 $route 为店内页设置不同的过渡效果
     $route(to, from) {
@@ -90,6 +99,7 @@ $material-icons-font-path: "~material-icons/iconfont/";
 .app-content {
   min-height: 100%;
   background: #fff;
+  -webkit-overflow-scrolling: touch;
 }
 #header {
   height: 0.88rem;
@@ -103,5 +113,16 @@ $material-icons-font-path: "~material-icons/iconfont/";
   font-size: 0.3rem;
   color: #fff;
   z-index: 99;
+  box-shadow: 1px 1px 4px #9e9e9e;
+}
+#header > span {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 1rem;
+}
+#header > span > img {
+  width: 0.2rem;
+  height: 0.3rem;
 }
 </style>

@@ -16,6 +16,9 @@ export default {
   },
   created() {
     this.$store.state.headerStatus = false;
+  },
+  mounted(){
+    
   }
 };
 </script>

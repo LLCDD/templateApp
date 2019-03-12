@@ -36,15 +36,14 @@ export default {
       try {
         // await等待一个异步返回的结果 如果没有await 会报user is undefined 获取不到
         let res = await this.http.post("/api/login", {
-          username: this.phone,
+          phone: this.phone,
           password: this.password
         });
         if (res.code == 200) {
-          // this.$store.commit("loginbanner", res.data.banners);
-          this.$store.dispatch("login", res.data.user);
+          console.log(res);
+          localStorage.setItem("token", res.data.token);
           this.$toasted.success("登录成功").goAway(1500);
-          // this.$router.replace({ name: "index" });
-          this.$router.push("/index");
+          this.$router.replace({ name: "index" });
         } else {
           this.$toasted.error(res.message, { icon: "error" }).goAway(2000);
         }
