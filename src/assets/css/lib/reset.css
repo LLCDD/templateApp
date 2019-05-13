@@ -202,7 +202,6 @@ body {
     color: #333;
     font-size: .28em;
     line-height: 1;
-    -webkit-text-size-adjust: none;
     height: 100%;
 }
 

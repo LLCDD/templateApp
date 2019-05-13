@@ -1,294 +1,299 @@
 <template>
-  <div class="div">
-    <div class="header">
-      <div class="left"></div>
+  <div class="index">
+    <!-- 头部 -->
+    <header>
+      <div>
+        <img src="http://www.zzjzj.net/images/logo-01.png" alt>
+        <div class="line"></div>
+        <el-menu
+          style="width:86%;position:absolute;right:0;top:20%"
+          :default-active="activeIndex2"
+          class="el-menu-demo"
+          mode="horizontal"
+          @select="handleSelect"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <el-menu-item index="3">
+            <router-link to="/index">首页</router-link>
+          </el-menu-item>
+          <el-submenu index="1">
+            <template slot="title">关于我们</template>
+            <el-menu-item index="1-1">
+              <router-link to="/index">公司简介</router-link>
+            </el-menu-item>
+            <el-menu-item index="1-2">
+              <router-link to="/index">服务平台</router-link>
+            </el-menu-item>
+            <el-menu-item index="1-3">
+              <router-link to="/index">介绍</router-link>
+            </el-menu-item>
+          </el-submenu>
+          <el-submenu index="2">
+            <template slot="title">企业文化</template>
+            <el-menu-item index="2-1">
+              <router-link to="/index">团队</router-link>
+            </el-menu-item>
+            <el-menu-item index="2-2">
+              <router-link to="/index">创新</router-link>
+            </el-menu-item>
+            <el-menu-item index="2-3">
+              <router-link to="/index">愿景</router-link>
+            </el-menu-item>
+          </el-submenu>
+          <el-submenu index="3">
+            <template slot="title">企业服务</template>
+            <el-menu-item index="3-1">
+              <router-link to="/index">服务宗旨</router-link>
+            </el-menu-item>
+            <el-menu-item index="3-2">
+              <router-link to="/index">服务目标</router-link>
+            </el-menu-item>
+            <el-menu-item index="3-3">
+              <router-link to="/index">产品介绍</router-link>
+            </el-menu-item>
+          </el-submenu>
+          <el-submenu index="4">
+            <template slot="title">咨询服务</template>
+            <el-menu-item index="4-1">用户咨询</el-menu-item>
+            <el-menu-item index="4-2">广告与媒体咨询</el-menu-item>
+            <!-- <el-menu-item index="4-3"></el-menu-item> -->
+          </el-submenu>
+          <el-submenu index="5">
+            <template slot="title">咨询服务</template>
+            <el-menu-item index="5-1">
+              <router-link to="/index">招聘</router-link>
+            </el-menu-item>
+            <el-menu-item index="5-2">
+              <router-link to="/index">人才战略</router-link>
+            </el-menu-item>
+            <el-menu-item index="5-3">
+              <router-link to="/index">福利介绍</router-link>
+            </el-menu-item>
+          </el-submenu>
+        </el-menu>
+      </div>
+    </header>
+    <!-- 轮播图 -->
+    <div class="lun">
+      <el-carousel :interval="3000" type="card" height="450px">
+        <el-carousel-item v-for="item in 6" :key="item">
+          <img
+            style="width:100%;height:100%"
+            src="http://pic1.nipic.com/2008-08-14/2008814183939909_2.jpg"
+            alt
+          >
+        </el-carousel-item>
+      </el-carousel>
+    </div>
+    <!-- 中间部分 -->
+    <section>
+      <div class="tit">
+        <h2>分析、统计、大数据服务中心</h2>
+        <h3>云计算和DB处理中心</h3>
+      </div>
       <div class="center">
-        <p style="font-size:0.35rem">竞彩1号店</p>
-        <p>联系电话 : 1212121212</p>
-        <div class="right" @click="add">查询详情</div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
-    </div>
-    <p class="tab">
-      <span @click="tap">
-        <img src="../../assets/images/qrcode.png" alt> 二维码
-      </span>
-      <span>
-        <img src="../../assets/img/mobilephone.png" alt>
-        APP下载
-      </span>
-      <span>
-        <img src="../../assets/images/share.png" alt> 分享
-      </span>
-    </p>
-    <p class="tab1">
-      <span>
-        <img src="../../assets/images/01.png" alt>
-        <p>
-          店内合买
-          <span>+10</span>
-        </p>
-      </span>
-      <span>
-        <img src="../../assets/images/02.png" alt>
-        <p>
-          店内跟单
-          <span>+2</span>
-        </p>
-      </span>
-      <span @click="announcement">
-        <img src="../../assets/images/03.png" alt>
-        <p>
-          店铺活动
-          <span>+3</span>
-        </p>
-      </span>
-    </p>
-    <div class="footer">
-      <p class="p">
-        <span>项目名称</span>
-        <span>比分直播 >></span>
+      <div class="tit" @mouseenter="enter(index)" @mouseleave="leave()">
+        <h2>解决方案</h2>
+        <h3>智能、互联整体解决方案</h3>
+      </div>
+      <div class="center">
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="tit">
+        <h2>让我们的服务更便捷</h2>
+        <h3>专业、简单、科学，便捷的服务</h3>
+      </div>
+      <div class="center">
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </section>
+    <!-- 底部部分 -->
+    <footer>
+      <p>
+        Tel ：
+        <span>0371-63222880</span> - Mail :
+        <span>@zz-jzj.com</span>
       </p>
-      <div class="di">
-        <div>
-          <img src="../../assets/images/ball.png" alt>
-          <span>
-            <span>竞彩足球</span>
-            <span>暂无比赛</span>
-          </span>
-        </div>
-        <div>
-          <img src="../../assets/images/11.png" alt>
-          <span>
-            <span>竞彩篮球</span>
-            <span>暂无比赛</span>
-          </span>
-        </div>
-        <div>
-          <img src="../../assets/images/14.png" alt>
-          <span>
-            <span>足球14场</span>
-            <span>暂无比赛</span>
-          </span>
-        </div>
-        <div>
-          <img src="../../assets/images/9.png" alt>
-          <span>
-            <span>任选9场</span>
-            <span>暂无比赛</span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <van-popup class="pupo" v-model="show">
-      <p>店铺二维码</p>
-      <img src="../../assets/images/ball.png" alt>
-      <br>
-      <button @click="tap1">确定</button>
-    </van-popup>
+      <p>公司对外邮箱：Jzj@zz-jzj.com</p>
+      <p>
+        河南捷之捷网络技术有限公司 -链接
+        <span>zzjzj.net</span>
+      </p>
+       <p>
+        豫ICP证:
+        <span>18029020号-1</span> -链接
+        <span>http://www.miitbeian.gov.cn/</span>
+      </p>
+      <!-- <p>法律免责声明页面.</p> -->
+      <p>
+        版权所有：
+        <span>河南捷之捷网络技术有限公司</span>
+      </p>
+     <!-- <p>版权投诉：</p>
+      <p>服务协议：</p>
+      <p>公众号：</p>
+      <p>邮编：</p>
+      <p>网址：</p>
+      <p>帮助中心：</p>
+      <p>
+        媒体资讯：
+        <span>0371-63222880</span>
+      </p>
+
+      <p>
+        Copyright © 2018
+        <span>河南捷之捷网络技术有限公司</span> - 豫ICP证:
+        <span>18029020号-1</span>
+      </p> -->
+    </footer>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      msg: "首页",
-      show: false
+      msg: "453454",
+      activeIndex: "1",
+      activeIndex2: "1"
     };
   },
-  mounted() {},
+  mounted() {
+    localStorage.setItem("name", "首页");
+  },
   methods: {
-    // 二维码的弹窗
-    tap() {
-      this.show = true;
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
     },
-    // 暂时 是关闭二微码的弹窗
-    tap1() {
-      this.show = false;
+    enter(index) {
+      // alert(index)
     },
-    // 店铺活动
-    announcement() {
-      this.$router.push("/announcement");
-    },
-    // 商家详情  Business details
-    add() {
-      this.$router.push("/Businessdetails");
+    leave() {
+      //  alert(index)
     }
   }
 };
 </script>
 <style scoped>
-.div {
-  min-height: 100%;
-  background: #f2f2f2;
-  padding-top: 0.88rem;
+.index >>> .el-carousel__item--card.is-active {
+  width: 80%;
+  margin-left: -15%;
 }
-.header {
-  height: 1.8rem;
-  padding: 0.3rem;
-  width: 100%;
-  background: #ffffff;
-  position: relative;
-  border-bottom: 1px solid #f2f2f2;
-}
-.header > .left {
-  height: 1.2rem;
-  width: 1.2rem;
-  background: #ccc;
-  border-radius: 50%;
-  border: 1px solid red;
-  float: left;
-}
-.header > .center {
-  text-align: left;
-  float: left;
-  margin-left: 0.2rem;
-  line-height: 0.5rem;
-  font-size: 0.3rem;
-}
-.header > .center > .right {
-  height: 0.5rem;
-  width: 1.5rem;
-  background: url("../../assets/img/shouyeb.png") no-repeat;
-  background-size: 100% 100%;
-  text-align: center;
-  color: #fff;
-  position: absolute;
-  right: 0;
-  bottom: 40%;
-  font-size: 0.22rem;
-}
-.tab {
-  height: 0.8rem;
-  width: 100%;
-}
-.tab > span {
-  display: inline-block;
-  width: 33.3%;
-  line-height: 0.8rem;
-  text-align: center;
-  border-right: 1px solid #f2f2f2;
-  background: #fff;
-  color: #e60417;
-  font-size: 0.26rem;
-}
-.tab > span > img {
-  height: 0.36rem;
-  width: 0.36rem;
-  margin-top: -0.05rem;
-  margin-right: 0.06rem;
-}
-.tab1 {
-  margin-top: 0.2rem;
-  height: 2.5rem;
-  width: 100%;
-}
-.tab1 > span {
-  display: inline-block;
-  width: 33.3%;
+.index {
   height: 100%;
-  background: #fff;
-  text-align: center;
-  line-height: 0.9rem;
+  overflow: auto;
+  /* background: red */
 }
-.tab1 > span > img {
-  height: 1rem;
-  width: 1.1rem;
-  margin-top: 0.5rem;
+.index > header {
+  height: 100px;
+  width: 100%;
+  /* background: red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
 }
-.tab1 > span > p {
-  font-size: 0.26rem;
+.index > header > div {
+  width: 80%;
+  background: pink;
+  height: 100%;
+  margin: 0 auto;
+  line-height: 100px;
   position: relative;
 }
-.tab1 > span > p > span {
-  height: 0.5rem;
-  line-height: 0.5rem;
-  width: 0.5rem;
-  display: block;
-  border-radius: 50%;
-  background: red;
+.index > header > div > img {
+  width: 12%;
+  display: inline-block;
+}
+a {
   color: #fff;
-  position: absolute;
-  right: 0.1rem;
-  top: 0;
 }
-.footer {
-  margin-top: 0.22rem;
+.lun {
+  margin-top: 100px;
+  width: 100%;
+  background: red;
+  height: 500px;
 }
-.footer > .p {
-  height: 0.8rem;
-  line-height: 0.8rem;
-  background: #fff;
-  padding: 0 0.3rem;
-  border-bottom: 1px solid #f2f2f2;
-}
-
-.footer > .p > :first-child {
-  font-size: 0.36rem;
-  border-left: 2px solid #e60013;
-  padding-left: 0.2rem;
-  color: #e60013;
-}
-.footer > .p > :last-child {
-  float: right;
-  color: #999;
-}
-.footer > .di {
-  float: left;
-  margin-bottom: 1.5rem;
-}
-.footer > .di > div {
-  float: left;
-  width: 50%;
-  height: 1.8rem;
-  background: #fff;
-  line-height: 1.8rem;
-  border-bottom: 1px solid #f2f2f2;
-  border-right: 1px solid #f2f2f2;
-}
-.footer > .di > div > img {
-  height: 1.2rem;
-  margin-left: 0.3rem;
-  margin-right: 0.2rem;
-  float: left;
-  margin-top: 8%;
-}
-.footer > .di > div > span {
-  float: left;
-}
-.footer > .di > div > span > :first-child {
-  font-size: 0.3rem;
-  font-weight: 550;
-  display: inherit;
-  margin-top: -0.4rem;
-  height: 0.5rem;
-}
-.footer > .di > div > span > :last-child {
-  color: #999;
-}
-.pupo {
-  height: 5rem;
-  width: 4.5rem;
-  background: #ffffff;
-  border-radius: 0.1rem;
+footer {
+  min-height: 200px;
+  background: red;
   text-align: center;
+  margin-top: 10px;
+  padding: 60px;
+  line-height: 40px;
+  font-size: 20px;
+  /* overflow: hidden; */
 }
-.pupo > p {
-  font-size: 0.3rem;
-  padding: 0.3rem 0;
-  color: #e60013;
+/* footer > p {
+  float: left;
+  padding: 10px;
+} */
+footer > p > span {
+  color: antiquewhite;
 }
-.pupo > img {
-  height: 3rem;
-  width: 3rem;
+section {
+  margin-top: 20px;
+}
+.tit {
+  height: 100px;
   background: red;
-  border-radius: 0.1rem;
+  text-align: center;
+  padding: 16px;
+  line-height: 34px;
+  margin-top: 10px;
 }
-.pupo > button {
-  margin-top: 0.2rem;
-  height: 0.6rem;
-  width: 1.3rem;
-  border-radius: 0.4rem;
-  color: #fff;
-  background: #e60013;
+.tit > :first-child {
+  font-size: 30px;
+  font-weight: 800;
+}
+.tit > :last-child {
+  font-size: 20px;
+  font-weight: 550;
+}
+.tit:hover {
+  cursor: pointer;
+}
+.center {
+  margin-top: 10px;
+  height: 240px;
+  width: 100%;
+}
+.center > div {
+  width: 80%;
+  height: 100%;
+  /* background: red; */
+  margin: 0 auto;
+}
+.center > div > div {
+  width: 15%;
+  background: orange;
+  float: left;
+  height: 100%;
+  margin-right: 6%;
+}
+.center > div > :last-child {
+  margin-right:0 
 }
 </style>
+

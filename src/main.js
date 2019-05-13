@@ -8,6 +8,8 @@ import { checkUpdate } from '@/update'
 import http from './http'
 import MintUI from 'mint-ui'
 import Vant from 'vant';
+import ElementUI from 'element-ui'
+
 import FastClick from 'fastclick' //使用 fastclick 解决移动端 300ms 点击延迟
 import filters from './filters' //将全部过滤器放在 filters/index.js 中便于管理
 //技巧 同时 use 多个插件 被依赖的插件应放在偏后方
@@ -20,7 +22,9 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import '@/assets/js/share'
 import '@/assets/js/share1'
-import 'mint-ui/lib/style.css'
+import 'mint-ui/lib/style.css' 
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
 
 import 'vant/lib/index.css';
 Vue.use(VueAwesomeSwiper)

@@ -52,6 +52,9 @@
 body {
   height: 100%;
   background: #fbf9fe;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 .app-header {
@@ -180,8 +183,7 @@ a:hover {
   color: #000;
 }
 
-.parentheses {
-}
+.parentheses {}
 
 .parentheses:before {
   content: '(';
