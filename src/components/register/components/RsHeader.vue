@@ -10,7 +10,7 @@ export default {
   name: "casualheader",
   data() {
     return {
-      headerpicture: require("../../../assets/img/return.png")
+      headerpicture: require("../../../assets/images/return.png")
     };
   },
   methods: {

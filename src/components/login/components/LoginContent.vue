@@ -3,11 +3,11 @@
     <!-- <input type="text" placeholder="请输入账号" v-model="phone">
     <input type="password" placeholder="请输入密码" v-model="password">-->
     <div class="landing">
-      <img class="img" src="../../../assets/img/mobilephone.png" alt>
+      <!-- <img class="img" src="../../../assets/img/mobilephone.png" alt> -->
       <input type="text" placeholder="请输入账号" v-model="phone">
     </div>
     <div class="landing">
-      <img class="img" src="../../../assets/img/lock.png" alt>
+      <!-- <img class="img" src="../../../assets/img/lock.png" alt> -->
       <input type="password" placeholder="请输入密码" v-model="password">
     </div>
     <div class="login" @click="login">登录</div>

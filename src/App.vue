@@ -5,12 +5,12 @@
       <!-- <header class="app-header" :class="{'header-hide':!$store.state.headerStatus}">
         <wx-header :pageName="pageName"></wx-header>
       </header>-->
-      <!-- <header id="header" v-if="this.$route.meta.header">
+      <header id="header" v-if="this.$route.meta.header">
         <span @click="fanhui" v-if="this.$route.meta.fan == 1">
           <img src="./assets/images/return.png" alt>
         </span>
         {{ this.$route.meta.title }}
-      </header> -->
+      </header>
       <!--搜索框 只在“微信”和“通讯录”页面下显示-->
       <!--四个门面页 “微信” “通讯录” “发现” “我”-->
       <section class="app-content">
@@ -22,10 +22,9 @@
         <!-- </transition> -->
       </section>
       <!--底部导航 路由 -->
-      <!-- <footer class="app-footer" v-if="this.$route.meta.footer">
+      <footer class="app-footer" v-if="this.$route.meta.footer">
         <wx-nav></wx-nav>
-      </footer> -->
-  
+      </footer>
     </div>
   </div>
 </template>

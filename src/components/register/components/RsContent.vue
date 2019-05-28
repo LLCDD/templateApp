@@ -18,15 +18,15 @@
   </div>-->
   <div class="regiset">
     <div class="put" style="  margin-top: 0.32rem;">
-      <img class="img" src="../../../assets/img/addpeople.png" alt>
+      <img class="img" src="../../../assets/img/coupons-h.png" alt>
       <input type="text" placeholder="请输入昵称" v-model="username">
     </div>
     <div class="put">
-      <img class="img" src="../../../assets/img/mobilephone.png" alt>
+      <img class="img" src="../../../assets/img/coupons-h.png" alt>
       <input type="text" placeholder="请输入手机号" v-model="phone">
     </div>
     <div class="put">
-      <img class="img" src="../../../assets/img/smallscreen.png" alt>
+      <img class="img" src="../../../assets/img/coupons-h.png" alt>
       <input class="code" type="text" placeholder="输入手机验证码" v-model="phone_code">
       <p class="p">
         <span v-if="inentify" @click="send" style="color:#e60013">发送验证码</span>
@@ -34,11 +34,11 @@
       </p>
     </div>
     <div class="put">
-      <img class="img" src="../../../assets/img/lock.png" alt>
+      <img class="img" src="../../../assets/img/coupons-h.png" alt>
       <input type="password" placeholder="请输入登陆密码" v-model="password">
     </div>
     <div class="put">
-      <img class="img" src="../../../assets/img/lock.png" alt>
+      <img class="img" src="../../../assets/img/coupons-h.png" alt>
       <input type="password" placeholder="请再次输入登陆密码" v-model="password_confirmation">
     </div>
     <!-- <div class="put">
