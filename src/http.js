@@ -9,12 +9,13 @@ console.log(config)
 // 创建axios实例
 const http = axios.create({
   baseURL: config.api_base,
-  timeout: 30000,
+  timeout: 300000,
   transformRequest: [
     function (data, headers) {
       data = data || {}
       data = qs.stringify(data)
-      headers['Authorization'] = getToken()
+      console.log(data)
+      // headers['Authorization'] = localStorage.getItem('user')
       return data
     }
   ]
@@ -24,7 +25,7 @@ const http = axios.create({
 http.interceptors.request.use(config => {
   config.data = config.data ? config.data : {}
   if (router.currentRoute && router.currentRoute.meta.requiresAuth) {
-    if (getToken() === '') {
+    if (localStorage.getItem('user')) {
       return Promise.reject('请登录后操作')
     } else {
       return config

@@ -1,6 +1,7 @@
 <template>
   <div class="allcontent">
     <!-- <img src="../../../assets/img/logo.png" alt> -->
+    <i class="el-icon-s-promotion img"></i>
   </div>
 </template>
 
@@ -15,10 +16,13 @@ export default {
 </script>
 
 <style scoped>
-.allcontent img {
+.allcontent {
+  text-align: center
+}
+.allcontent .img {
   display: block;
-  width: 2.2rem;
-  height: 2.2rem;
+  font-size: 200px;
+  color: #2e82ff;
   margin: 0 auto;
   margin-bottom: 1.28rem;
 }

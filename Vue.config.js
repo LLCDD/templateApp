@@ -7,7 +7,10 @@ module.exports = {
         https: false,
         proxy: {
             '/api': {
-                target: 'http://192.168.0.233',
+                // 线上
+                //  target: 'http://www.zzjzj.net',
+                // 本地
+                target: 'http://192.168.0.148:8080',
                 ws: true,
                 changeOrigin: true
             }
