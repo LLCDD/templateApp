@@ -18,7 +18,7 @@
     "lodash": "^4.17.11",
     "material-icons": "^0.2.3",
     "mint-ui": "^2.2.13",
-    "qs": "^6.5.2",
+    "qs": "^6.5.3",
     "vant": "^1.6.9",
     "vue": "^2.5.17",
     "vue-awesome-swiper": "^2.6.7",
